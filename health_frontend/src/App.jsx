@@ -1,6 +1,6 @@
-import { Route, Routes } from 'react-router-dom'
+import { Routes } from 'react-router-dom'
 import './App.css'
-import Recyclebin from './pages/Recyclebin'
+// import Recyclebin from './pages/Recyclebin'
 
 
 
