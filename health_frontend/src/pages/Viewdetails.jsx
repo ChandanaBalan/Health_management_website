@@ -1,6 +1,7 @@
 import React from 'react'
 import Figure from 'react-bootstrap/Figure';
 
+
 function Viewdetails() {
   return (
     <>
@@ -8,8 +9,10 @@ function Viewdetails() {
 
       <div className="row">
         <div className="col-md-3"></div>
-        <div className="col-md-6">
-          <div className='row p-2 rounded' style={{ marginTop: "50px", border: "2px solid rgb(84, 194, 255)" }}>
+        <div className="col-md-6 mt-5">
+          
+
+          <div className='row p-2 rounded' style={{ marginTop: "10px", border: "2px solid rgb(84, 194, 255)" }}>
             <div className="col-6">
               <div className='w-100'>
                 <h4 className='text-black' style={{ textAlign: "right" }}>Health Condition : </h4>
@@ -108,8 +111,9 @@ function Viewdetails() {
                 
               </Figure>
 
-              <div className='w-100 text-center'>
-                <button className='button button-rounded p-2 mt-2 bg-primary text-white' >Upload file</button>
+              <div className='w-100 d-flex justify-content-end px-5'>
+                {/* <button className='rounded btn btn-primary p-2 mt-2 bg-primary text-white' >Edit file</button> */}
+                <button className='rounded btn btn-primary  p-2 mt-2 bg-white text-primary' >Upload file</button>
               </div>
             </div>
           </div>
