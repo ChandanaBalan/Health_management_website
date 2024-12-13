@@ -6,7 +6,7 @@ import Register from './components/Register'
 import Login from './components/Login'
 import Viewdetails from './pages/Viewdetails'
 import Home from './pages/Home'
-import AddModal from './components/AddModal';
+
 
 
 
@@ -27,7 +27,7 @@ function App() {
         
         
       </Routes>
-      <AddModal/>
+      
     </>
   )
 }
