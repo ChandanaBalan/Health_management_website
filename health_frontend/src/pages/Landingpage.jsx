@@ -3,6 +3,7 @@ import React from 'react'
 function Landingpage() {
   return (
     <>
+
       <div className='container my-5 '>
         <div className='row align-items-center justify-content-between'>
           <div className="col-md-6">
@@ -37,6 +38,7 @@ function Landingpage() {
         </div>
 
       </div>
+
     </>
   )
 }
