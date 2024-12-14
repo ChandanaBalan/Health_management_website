@@ -22,17 +22,16 @@ function Landingpage() {
         <div className='d-flex justify-content-between '>
          
         <div className='row mt-5'>
-        <div className='col-md-6'>
+        <div className='col-md-5'>
             <img width={'400px'} src="https://technext.github.io/live-doc/v1.0.0/assets/img/gallery/eye-care.png" alt="" />
           </div>
-          <div className='col-md-6'>
+          <div className="col-md-2"></div>
+          <div className='col-md-5'>
             <h3 className='text-primary'>
-              Eye Care with Top Professionals <br />
-              and In Budget.</h3>
-            <p>We've built a healthcare system that puts your needs first. <br />
-              For us, there is nothing more important than the health of <br />
-              you and your loved ones.</p>
-              <button className='btn btn-primary text-white'>Learn More</button>
+            We've built a healthcare system that puts your needs first..</h3>
+             
+            <img src="https://th.bing.com/th/id/OIP.z-p7vLPjwCUuvyR2dKPxIwHaE8?rs=1&pid=ImgDetMain" alt="no img" /> 
+              
           </div>
         </div>
         </div>
