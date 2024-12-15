@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import AddModal from '../components/AddModal'
 import Card from 'react-bootstrap/Card';
+import EditModal from '../components/EditModal';
 
 function Home() {
 
@@ -22,6 +23,9 @@ function Home() {
           </div>
           <div>
             <div className= ' rounded text-center mt-5'><AddModal /></div>
+            <div>
+              <EditModal/>
+            </div>
           </div>
   
           <div className='d-flex justify-content-center gap-5 mt-4'>
