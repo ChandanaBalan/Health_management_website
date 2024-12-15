@@ -1,5 +1,28 @@
 {
-    "data": [
-
-    ]
+  "users": [
+    {
+      "username": "Chandana123",
+      "email": "chandana@gmail.com",
+      "password": "Chandana123",
+      "id": 3
+    },
+    {
+      "username": "Chandana",
+      "email": "chandana@gmail.com",
+      "password": "Chandana123",
+      "id": 4
+    },
+    {
+      "username": "Chandana123",
+      "email": "chandana@gmail.com",
+      "password": "Chandana123",
+      "id": 5
+    },
+    {
+      "username": "Alia",
+      "email": "Alia@gmail.com",
+      "password": "Alia123",
+      "id": 6
+    }
+  ]
 }

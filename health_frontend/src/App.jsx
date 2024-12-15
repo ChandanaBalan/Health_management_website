@@ -25,7 +25,7 @@ function App() {
         <Route path='/' element={<Landingpage/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/login' element={<Login navigateToHome={() => window.location.href = '/home'}/>}/>
         <Route path='/home/recyclebin' element={<Recyclebin/>}/>
         <Route path='/home/viewdetails' element={<Viewdetails/>}/> 
       </Routes>
@@ -37,3 +37,4 @@ function App() {
 }
 
 export default App
+
