@@ -16,3 +16,8 @@ export const loginUser = async (reqBody) => {
 export const getUsers = async () => {
   return await commonApi('GET', `${serverUrl}/users`);
 };
+
+// API for fetching details for Viewdetails
+export const getViewDetails = async (id) => {
+  return await commonApi('GET', `${serverUrl}/details/${id}`); // fetch details
+};
