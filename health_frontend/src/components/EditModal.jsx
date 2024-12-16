@@ -29,7 +29,7 @@ function EditModal() {
         <>
 
             <Button variant="primary" onClick={handleShow}>
-                Edit Details
+                Edit
             </Button>
 
 

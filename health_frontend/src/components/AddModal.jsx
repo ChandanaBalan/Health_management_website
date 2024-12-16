@@ -1,21 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { addHealthData } from "../services/allApi";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-function AddModal() {
-  const [show, setShow] = React.useState(false);
+
+
+function AddModal({setAddStatus}) {
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
 
     const data = Object.fromEntries(formData.entries());
     data.file = formData.get("file");
 
-    console.log("Form Data Submitted:", data);
+    try {
+      const response = await addHealthData(data); // Use the imported API
+      console.log(response);
+      if(response.status>=200 && response.status<300){
+        
+        handleClose()
+        setAddStatus(response)
+      }
+      else{
+        
+        handleCancel()
+      }
+      
+      console.log("Data submitted successfully:", response.data);
+      
+      handleClose(); // Close modal on success
+    } catch (err) {
+      console.error("Error submitting data:", err);
+    }
   };
 
   const inputStyle = {
@@ -26,8 +49,8 @@ function AddModal() {
   return (
     <>
 
-      <Button variant="primary" onClick={handleShow}>
-        Add Details
+      <Button variant="primary"  onClick={handleShow}>
+      <p className="m-0"><FontAwesomeIcon icon={faPlus} style={{color: "#ffffff",}} className="me-2" />Add</p>
       </Button>
 
     
@@ -65,6 +88,8 @@ function AddModal() {
             <div className="text-end">
               <button type="button" className="btn btn-secondary me-2" onClick={handleClose}>Close</button>
               <button type="submit" className="btn btn-primary">Submit</button>
+
+              
             </div>
           </form>
         </Modal.Body>

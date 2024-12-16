@@ -16,3 +16,25 @@ export const loginUser = async (reqBody) => {
 export const getUsers = async () => {
   return await commonApi('GET', `${serverUrl}/users`);
 };
+
+
+// API to add health data
+export const addHealthData = async (reqBody) => {
+  return await commonApi("POST", `${serverUrl}/data`, reqBody);
+};
+
+//Api to get data from added details
+export const getData = async () => {
+  return await commonApi("GET", `${serverUrl}/data`);
+};
+
+// API for deleting data
+export const deleteData = async (id) => {
+  return await commonApi('DELETE', `${serverUrl}/data/${id}`);
+};
+
+//update a specific  item by id
+
+export const  updateData = async(id, updatedItem)=>{
+  return await commonApi('PUT',`${serverUrl}/data/${id}`,updatedItem)
+}

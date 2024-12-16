@@ -86,7 +86,7 @@ function Login({navigateToHome}) {
   
                  {/* Status Message */}
                  {message.text && (
-                  <p className={(`mt-3 text-center text-${message.type}`)}>
+                  <p className={(`(mt-3 text-center text-${message.type})`)}>
                     {message.text}
                   </p>
                 )}

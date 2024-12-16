@@ -46,7 +46,7 @@ function Viewdetails() {
      <div className='bg-white container-fluid'>
         <div className="row">
           <div className="col-md-3"></div>
-          <div className="col-md-6 mt-5">
+          <div className="col-md-6 my-5 px-md-0 px-5">
   
   
             <div className='row p-2 rounded' style={{ marginTop: "10px", border: "2px solid rgb(84, 194, 255)" }}>
