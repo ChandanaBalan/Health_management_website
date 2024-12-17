@@ -33,7 +33,7 @@ function Register() {
       const response = await registerUser(formData);
       if (response.status === 201) {
         setMessage({ text: 'Registration successful!', type: 'success' });
-        setFormData({ username: '', password: '' }); // Clear form
+        setFormData({ username: '', password: '', email:'' }); // Clear form
       } else {
         setMessage({ text: 'Registration failed. Try again.', type: 'danger' });
       }
@@ -45,7 +45,7 @@ function Register() {
     }
   };
   return (
-   <div className='bg-white'>
+   <div className='bg-white' style={{marginTop:"70px"}}>
       <div className="container  d-flex justify-content-center align-items-center " style={{ minHeight: '70vh' }}>
         <div className="col-md-5">
           <div className="card shadow-lg border-0 rounded bg-white">

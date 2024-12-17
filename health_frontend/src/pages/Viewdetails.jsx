@@ -43,7 +43,7 @@ function Viewdetails() {
     <>
 
 
-     <div className='bg-white container-fluid'>
+     <div className='bg-white container-fluid' style={{marginTop:"110px",marginBottom:"260px"}}>
         <div className="row">
           <div className="col-md-3"></div>
           <div className="col-md-6 my-5 px-md-0 px-5">

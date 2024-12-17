@@ -42,7 +42,7 @@ function Login({navigateToHome}) {
   };
 
   return (
-    <div className='bg-white'>
+    <div className='bg-white mt-5'>
       <div className="container d-flex justify-content-center align-items-center " style={{ minHeight: '70vh' }}>
         <div className="col-md-5 ">
           <div className="card shadow-lg border-0 rounded bg-white">
@@ -86,7 +86,7 @@ function Login({navigateToHome}) {
   
                  {/* Status Message */}
                  {message.text && (
-                  <p className={(`(mt-3 text-center text-${message.type})`)}>
+                  <p className={(`mt-3 text-center text-${message.type}`)}>
                     {message.text}
                   </p>
                 )}

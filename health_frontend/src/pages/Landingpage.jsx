@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Landingpage() {
   return (
     <>
-      <div className='bg-white'>
+      <div className='bg-white' style={{marginTop:"110px", marginBottom:"250px"}}>
         <div className='container py-5'  >
           <div className='row align-items-center justify-content-between' >
             <div className="col-md-6 text-center text-md-start">
@@ -53,7 +53,7 @@ function Landingpage() {
               <img
                 src="https://th.bing.com/th/id/OIP.z-p7vLPjwCUuvyR2dKPxIwHaE8?rs=1&pid=ImgDetMain"
                 alt="Healthcare Solution"
-                className="img-fluid mt-3"
+                className="img-fluid my-5"
               />
             </div>
           </div>
