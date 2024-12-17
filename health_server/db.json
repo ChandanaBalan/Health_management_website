@@ -24,5 +24,15 @@
       "password": "Alia123",
       "id": 6
     }
+  ],
+
+  "details": [
+    {
+      "id": 1,
+      "healthCondition": "Infection",
+      "doctorName": "Dr. Divya S",
+      "date": "6/12/2024",
+      "description": "This is a sample description for an infection case."
+    }
   ]
 }
