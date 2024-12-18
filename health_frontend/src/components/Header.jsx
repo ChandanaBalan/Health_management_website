@@ -55,7 +55,7 @@ function Header() {
                       <div className="mb-2 ">
                             <label htmlFor="file" className="form-label">Upload File</label>
                             <input type="file" className="form-control" id="file" name="file" style={inputStyle}  />
-                        </div>
+                            </div>
                       <h5 className='text-black mt-4'>Username</h5>
                       <button className='btn btn-danger' onClick={handleLogout}>Logout</button>
                       </div>
