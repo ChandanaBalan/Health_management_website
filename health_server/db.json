@@ -35,10 +35,52 @@
       "email": "sc@eg.cd",
       "password": "asdfc",
       "id": 6
+<<<<<<< HEAD
+    },
+    {
+      "username": "riya",
+      "email": "riya@gmail.com",
+      "password": "riya123",
+      "id": 7
+    },
+    {
+      "username": "cghd",
+      "email": "sgdf@g.com",
+      "password": "srysgs",
+      "id": 8
+    },
+    {
+      "username": "shamma",
+      "email": "kadeejathshammaaffrin@gmail.com",
+      "password": "1234",
+      "id": 9
+    },
+    {
+      "username": "shamma1",
+      "email": "kadeejathshammaaffrin@gmail.com",
+      "password": "1234",
+      "id": 10
+    },
+    {
+      "username": "shamma2",
+      "email": "kadeejathshammaaffrin@gmail.com",
+      "password": "1234",
+      "id": 11
+=======
+>>>>>>> 12a52aea01ab7c9992c3779aa581434daa11c28d
     }
   ],
   "data": [
     {
+<<<<<<< HEAD
+      "condition": "mmm",
+      "doctor": "sss",
+      "description": "sssss",
+      "date": "2024-12-04",
+      "file": {},
+      "id": 1,
+      "recycled": true
+=======
       "condition": "Thenga",
       "doctor": "sdgfsd",
       "description": "sdgvdv",
@@ -70,6 +112,7 @@
       "date": "2024-12-02",
       "file": {},
       "id": 7
+>>>>>>> 12a52aea01ab7c9992c3779aa581434daa11c28d
     }
   ]
 }

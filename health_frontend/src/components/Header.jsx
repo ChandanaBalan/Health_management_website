@@ -1,16 +1,36 @@
 import { faNotesMedical, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Dropdown from 'react-bootstrap/Dropdown';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation ,useNavigate } from 'react-router-dom';
+import { getUserData } from '../services/allApi';
 
 
 function Header() {
   // Get current location
   const location = useLocation();
 
+  const navigate = useNavigate();
+
+  const [user,setuser]=useState([])
+
   // Check if the current route is the landing page
   const isExcludedPage = location.pathname === '/' || location.pathname === '/login' || location.pathname === '/register';
+
+  const handleLogout = () => {
+    navigate('/');  
+  };
+
+  // const getuser =async(id)=>{
+  //   const result =await getUserData(id)
+  //   setuser(result)
+   const inputStyle = {
+    borderRadius: "15px",
+   };
+
+  useEffect(()=>{
+    getUserData()
+  },[])
 
   return (
     <>
@@ -32,9 +52,12 @@ function Header() {
                      <div className='row '>
                       <div className="col-2"></div>
                       <div className="col-8 d-flex justify-content-center align-items-center flex-column p-3">
-                      <img src="https://cdn-icons-png.flaticon.com/512/5951/5951752.png" alt="" className='w-100' />
+                      <div className="mb-2 ">
+                            <label htmlFor="file" className="form-label">Upload File</label>
+                            <input type="file" className="form-control" id="file" name="file" style={inputStyle}  />
+                        </div>
                       <h5 className='text-black mt-4'>Username</h5>
-                      <button className='btn btn-danger'>Logout</button>
+                      <button className='btn btn-danger' onClick={handleLogout}>Logout</button>
                       </div>
                       <div className="col-2"></div>
                       
@@ -42,7 +65,7 @@ function Header() {
                    </Dropdown.Menu>
                  </Dropdown>
                 )
-               }
+              }
               </div>
             </div>
           </div>
