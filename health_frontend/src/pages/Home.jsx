@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AddModal from '../components/AddModal'
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {  getData, updateData } from '../services/allApi';
 import { faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Home() {
   const [data, setData] = useState([]);
   const [addStatus, setAddStatus] = useState({})
-
+  const navigate = useNavigate()
 
 
   const fetchData = async () => {
@@ -98,7 +98,7 @@ function Home() {
                       <Card.Title className='text-center text-black'>{item.condition || 'Card Title'}</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted text-center">{item.doctor || 'Card Subtitle'}</Card.Subtitle>
                       <div className='d-flex justify-content-around mt-5'>
-                        <Link to={`/home/viewdetails`} className='text-light'><button className='btn btn-primary text-light'><FontAwesomeIcon icon={faEye} style={{ color: 'white' }} /> </button></Link>
+                        <button onClick={() => navigate(`/home/viewdetails/${item?.id}`)}  className='btn btn-primary text-light'><FontAwesomeIcon icon={faEye} style={{ color: 'white' }} /> </button>
                         <button className='btn btn-danger' onClick={() => handleDelete(item.id)}><FontAwesomeIcon icon={faTrash} /></button>
                       </div>
 
