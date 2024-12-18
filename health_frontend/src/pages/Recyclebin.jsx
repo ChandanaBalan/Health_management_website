@@ -54,7 +54,7 @@ function Recyclebin() {
   return (
     <>
 
-    <div className='bg-white container-fluid'>
+    <div className='bg-white container-fluid' style={{marginTop:"110px", height:"100vh"}}>
       <div className="row">
         <div className="col-md-2"></div>
         <div className="col-md-8 table-responsive">

@@ -35,11 +35,20 @@ export const deleteData = async (id) => {
 
 //update a specific  item by id
 
-export const  updateData = async(id, updatedItem)=>{
-  return await commonApi('PUT',`${serverUrl}/data/${id}`,updatedItem)
+export const  updateData = async(id, data)=>{
+  return await commonApi('PUT',`${serverUrl}/data/${id}`,data)
 }
 
+<<<<<<< HEAD
 //to get userdata
 export const getUserData = async (id) => {
   return await commonApi('GET', `${serverUrl}/users/${id}`);
 };
+=======
+
+export const getDataByIdAPI = async (id) => {
+  return await commonApi("GET",`${serverUrl}/data/${id}`, "");
+  };
+
+
+>>>>>>> 12a52aea01ab7c9992c3779aa581434daa11c28d

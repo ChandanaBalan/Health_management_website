@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AddModal from '../components/AddModal'
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {  getData, updateData } from '../services/allApi';
 import { faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Home() {
   const [data, setData] = useState([]);
   const [addStatus, setAddStatus] = useState({})
-
+  const navigate = useNavigate()
 
 
   const fetchData = async () => {
@@ -62,10 +62,10 @@ function Home() {
 
   return (
     <>
-      <div className='bg-white'>
+      <div className='bg-white' style={{marginBottom:"260px"}}>
         <div className='container-fluid'>
           <div className="row">
-            <img src="https://static.vecteezy.com/system/resources/previews/006/712/985/non_2x/abstract-health-medical-science-healthcare-icon-digital-technology-science-concept-modern-innovation-treatment-medicine-on-hi-tech-future-blue-background-for-wallpaper-template-web-design-vector.jpg" alt="no img" style={{ width: "100%", height: "35vh" }} className='p-0' />
+            <img src="https://static.vecteezy.com/system/resources/previews/006/712/985/non_2x/abstract-health-medical-science-healthcare-icon-digital-technology-science-concept-modern-innovation-treatment-medicine-on-hi-tech-future-blue-background-for-wallpaper-template-web-design-vector.jpg" alt="no img" style={{ width: "100%", height: "50vh" }} className='p-0' />
             <div className="col-md-1"></div>
             <div className="col-md-10 justify-content-center align-item-center">
 
@@ -98,7 +98,7 @@ function Home() {
                       <Card.Title className='text-center text-black'>{item.condition || 'Card Title'}</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted text-center">{item.doctor || 'Card Subtitle'}</Card.Subtitle>
                       <div className='d-flex justify-content-around mt-5'>
-                        <Link to={`/home/viewdetails`}><button className='btn btn-primary'><FontAwesomeIcon icon={faEye} /> </button></Link>
+                        <button onClick={() => navigate(`/home/viewdetails/${item?.id}`)}  className='btn btn-primary text-light'><FontAwesomeIcon icon={faEye} style={{ color: 'white' }} /> </button>
                         <button className='btn btn-danger' onClick={() => handleDelete(item.id)}><FontAwesomeIcon icon={faTrash} /></button>
                       </div>
 

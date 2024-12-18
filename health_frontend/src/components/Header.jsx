@@ -35,7 +35,7 @@ function Header() {
   return (
     <>
 
-      <div className='bg-primary container-fluid'>
+      <div className='bg-primary container-fluid fixed-top' >
         <div className="row">
           <div className="col-md-2"></div>
           <div className="col-md-8 py-3">

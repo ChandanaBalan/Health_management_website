@@ -27,7 +27,7 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login navigateToHome={() => window.location.href = '/home'}/>}/>
         <Route path='/home/recyclebin' element={<Recyclebin/>}/>
-        <Route path='/home/viewdetails' element={<Viewdetails/>}/> 
+        <Route path='/home/viewdetails/:id' element={<Viewdetails/>}/> 
       </Routes>
       <Footer />
       

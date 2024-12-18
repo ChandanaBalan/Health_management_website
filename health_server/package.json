@@ -8,10 +8,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
+<<<<<<< HEAD
     "json-server": "^0.17.4",
     "nodemon": "^3.1.9",
     "react-router-dom": "^6.28.0"
   }
+=======
+    "json-server": "^0.17.4"
+  },
+  "description": ""
+>>>>>>> 12a52aea01ab7c9992c3779aa581434daa11c28d
 }

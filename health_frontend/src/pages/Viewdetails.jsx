@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Figure from 'react-bootstrap/Figure';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import EditModal from '../components/EditModal';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getDataByIdAPI } from '../services/allApi';
 
 
 
@@ -14,6 +17,41 @@ function Viewdetails() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  // State for form data
+  const [editdata, setEditData] = useState({
+    condition: "",
+    doctor: "",
+    description: "",
+    date: "",
+    file: null
+  });
+
+  useEffect(() => {
+    const fetchDetails = async () => {
+      try {
+        const response = await getDataByIdAPI(id);
+        const fetchedData = response.data;
+        console.log(fetchedData);
+        if (fetchedData) {
+          setEditData({
+            condition: fetchedData.condition || "",
+            doctor: fetchedData.doctor || "",
+            description: fetchedData.description || "",
+            date: fetchedData.date || "",
+            file: null, // File will remain empty initially
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching details:", error);
+      }
+    };
+
+    fetchDetails();
+  }, [id]);
+
   // Handle file selection and upload
   const handleFileUpload = (event) => {
     const files = Array.from(event.target.files);
@@ -25,13 +63,11 @@ function Viewdetails() {
     setUploadedFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
   };
 
-
   // Open modal to view file
   const handleFileView = (file) => {
     setSelectedFile(file);
     setShowModal(true);
   };
-
 
   // Close modal
   const handleCloseModal = () => {
@@ -43,16 +79,16 @@ function Viewdetails() {
     <>
 
 
-     <div className='bg-white container-fluid'>
+      <div className='bg-white container-fluid' style={{ marginTop: "110px", marginBottom: "260px" }}>
         <div className="row">
           <div className="col-md-3"></div>
           <div className="col-md-6 my-5 px-md-0 px-5">
-  
-  
+
+
             <div className='row p-2 rounded' style={{ marginTop: "10px", border: "2px solid rgb(84, 194, 255)" }}>
               <div className="col-6">
                 <div className='w-100'>
-                  <h4 className='text-black' style={{ textAlign: "right" }}>Health Condition : </h4>
+                  <h4 className='text-black' style={{ textAlign: "right" }}>Health Condition : {editdata.condition}</h4>
                 </div>
               </div>
               <div className="col-6">
@@ -66,7 +102,7 @@ function Viewdetails() {
                 </div>
               </div>
               <div className="col-6">
-                <h5 className='text-black'>Dr. Divya S</h5>
+                <h5 className='text-black'>{editdata.doctor}</h5>
               </div>
             </div>
             <div className='row p-2 rounded' style={{ marginTop: "1px", border: "2px solid rgb(84, 194, 255)" }}>
@@ -76,7 +112,7 @@ function Viewdetails() {
                 </div>
               </div>
               <div className="col-6">
-                <h5 className='text-black'>6/12/2024</h5>
+                <h5 className='text-black'>{editdata.date}</h5>
               </div>
             </div>
             <div className='row p-2 rounded' style={{ marginTop: "1px", border: "2px solid rgb(84, 194, 255)" }}>
@@ -86,14 +122,14 @@ function Viewdetails() {
                 </div>
               </div>
               <div className="col-6">
-                <p className='text-black' style={{ textAlign: "justify" }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis facilis molestiae eveniet, repellat minima numquam, aliquid aperiam at distinctio omnis dignissimos eius deleniti reprehenderit soluta natus! Ut necessitatibus sequi ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam laborum vero facilis perspiciatis, facere blanditiis inventore. Molestiae quaerat, sunt doloribus quia iure culpa exercitationem dolorem ut harum aliquam</p>
+                <p className='text-black' style={{ textAlign: "justify" }}>{editdata.description}</p>
               </div>
             </div>
             <div className='row p-2 rounded' style={{ marginTop: "1px", border: "2px solid rgb(84, 194, 255)" }}>
               <div className="col-6">
                 <div className='w-100'>
-                  <h5 className='text-black' style={{ textAlign: "right" }}>Files :<br /> <p style={{fontSize:"8px"}} className='pe-2'>(.jpeg,.jpg,.pdf)</p>   </h5>
-                  
+                  <h5 className='text-black' style={{ textAlign: "right" }}>Files :<br /> <p style={{ fontSize: "8px" }} className='pe-2'>(.jpeg,.jpg,.pdf)</p>   </h5>
+
                 </div>
               </div>
               <div className="col-6">
@@ -123,15 +159,15 @@ function Viewdetails() {
                     >
                       ✕
                     </button>
-  
+
                   </Figure>
                 ))
                 }
-  
-  
-  
+
+
+
                 <div className='w-100 d-flex justify-content-end px-5'>
-  
+
                   <label
                     htmlFor="file-upload"
                     className="rounded btn btn-primary p-2 mt-2 bg-white text-primary"
@@ -152,8 +188,11 @@ function Viewdetails() {
           </div>
           <div className="col-md-3"></div>
         </div >
-  
-  
+        <div className='text-center mb-5'>
+          < EditModal setEditData={setEditData} />
+        </div>
+
+
         {/* Full-Screen Modal */}
         <Modal show={showModal} onHide={handleCloseModal} size="lg" centered>
           <Modal.Header closeButton>
@@ -182,7 +221,7 @@ function Viewdetails() {
             </Button>
           </Modal.Footer>
         </Modal>
-     </div>
+      </div>
     </>
   )
 }

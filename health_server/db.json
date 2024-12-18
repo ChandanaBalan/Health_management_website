@@ -2,27 +2,40 @@
   "users": [
     {
       "username": "Chandana123",
-      "email": "chandana@gmail.com",
       "password": "Chandana123",
-      "id": 3
+      "email": "chandana@gmail.com",
+      "id": 1
+    },
+    {
+      "username": "Chandana123",
+      "password": "Chandana123",
+      "email": "chandana@gmail.com",
+      "id": 2
     },
     {
       "username": "Chandana",
       "email": "chandana@gmail.com",
       "password": "Chandana123",
+      "id": 3
+    },
+    {
+      "username": "sdv",
+      "email": "sdfv@dfv.com",
+      "password": "sdf",
       "id": 4
     },
     {
-      "username": "Chandana123",
-      "email": "chandana@gmail.com",
-      "password": "Chandana123",
+      "username": "efdc",
+      "email": "sdfc@fg.com",
+      "password": "sdf",
       "id": 5
     },
     {
-      "username": "Alia",
-      "email": "Alia@gmail.com",
-      "password": "Alia123",
+      "username": "wqd",
+      "email": "sc@eg.cd",
+      "password": "asdfc",
       "id": 6
+<<<<<<< HEAD
     },
     {
       "username": "riya",
@@ -53,10 +66,13 @@
       "email": "kadeejathshammaaffrin@gmail.com",
       "password": "1234",
       "id": 11
+=======
+>>>>>>> 12a52aea01ab7c9992c3779aa581434daa11c28d
     }
   ],
   "data": [
     {
+<<<<<<< HEAD
       "condition": "mmm",
       "doctor": "sss",
       "description": "sssss",
@@ -64,6 +80,39 @@
       "file": {},
       "id": 1,
       "recycled": true
+=======
+      "condition": "Thenga",
+      "doctor": "sdgfsd",
+      "description": "sdgvdv",
+      "date": "2024-12-04",
+      "id": 3
+    },
+    {
+      "condition": "werthy",
+      "doctor": "wert",
+      "description": "dfgh",
+      "date": "2024-12-02",
+      "file": {},
+      "id": 5,
+      "recycled": false
+    },
+    {
+      "condition": "dfg",
+      "doctor": "dgfvfgv",
+      "description": "fgvesg",
+      "date": "2024-12-05",
+      "file": {},
+      "id": 6,
+      "recycled": false
+    },
+    {
+      "condition": "sfgvs",
+      "doctor": "sdg",
+      "description": "sdgv",
+      "date": "2024-12-02",
+      "file": {},
+      "id": 7
+>>>>>>> 12a52aea01ab7c9992c3779aa581434daa11c28d
     }
   ]
 }
