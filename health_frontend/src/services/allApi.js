@@ -38,3 +38,8 @@ export const deleteData = async (id) => {
 export const  updateData = async(id, updatedItem)=>{
   return await commonApi('PUT',`${serverUrl}/data/${id}`,updatedItem)
 }
+
+//to get userdata
+export const getUserData = async (id) => {
+  return await commonApi('GET', `${serverUrl}/users/${id}`);
+};
